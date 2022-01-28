@@ -2,7 +2,9 @@
 
 This repo includes code and images for defect classification in steel parts. The goal of this work was to classify (and eventually get the bounding boxes for) surface defects in steel using machine learning methods and only 1 image from each defect class. 1 image from each of the 5 defect classes in the [Severstal steel defect detection dataset](https://www.kaggle.com/c/severstal-steel-defect-detection) were used to generate the training and validation sets. The entire Severstal dataset was used as the test set with some images from non-defect class removed. There are images labelled as defect/non-defect to enable binary classification and there are images labelled as one of the 5 defect classes to enable multi-class classification.
 
-To use the data and scripts, I suggest cloning the repo to your computer or other cloud-based storage system. Any scripts that use directory strings will need to be modified.
+To use the data and scripts, I suggest cloning the repo to your computer or other cloud-based storage system. Any scripts that use directory strings will need to be modified. All code was tested using Python version 3.8.0 64-bit and Tensorflow version 2.7.0.
+
+If you have no intention of using the data or scripts and just want an idea of the thought process used throughout this work, see the steel-defect-detection-progess.ppt file.
 
 ## File descriptions
 ### Folders w/images
@@ -17,7 +19,7 @@ To use the data and scripts, I suggest cloning the repo to your computer or othe
 ### Model scripts
 - transfer_learning_bottleneck_features_binary.py : script to train and evaluate a transfer learning  model using a "bottleneck feature" approach. Model is a binary classifier (defect/non-defect) based on ResNet50. Training and validation images intended to be used are in the train_colour_full_aug2_binary folder. Test images are in kaggle_train_full folder (one_defect sub-folder)
 - transfer_learning_bottleneck_features_multiclass.py : script to train and evaluate a transfer learning model using a "bottleneck feature" approach. Model is a multi-class classifier (5 defect classes) based on ResNet50. Training and validation images intended to be used are in the train_colour_full_aug2 folder. Test images are in the kaggle_train_full folder (one_defect sub-folder)
-- transfer_learning_model_freeze_approach.py : script to train and evaluate a transfer learning model using a "model freeze" approach. Model is a binary classifier (defect/non-defect) based on ResNet50. Training and validation images intended to be used are in the train_colour_full_aug2_binary folder. Test images are in kaggle_train_full folder (one_defect sub-folder)
+- transfer_learning_model_freeze.py : script to train and evaluate a transfer learning model using a "model freeze" approach. Model is a binary classifier (defect/non-defect) based on ResNet50. Training and validation images intended to be used are in the train_colour_full_aug2_binary folder. Test images are in kaggle_train_full folder (one_defect sub-folder)
 - model_from_scratch.py : script to train and evaluate a binary classifier (defect/non-defect) using a CNN with simple architecture. Training and validation images intended to be used are in the train_colour_full_aug2_binary folder.
 
 *Keras blog describing the difference between the "bottleneck features" and "freeze model" transfer learning approaches: https://keras.io/guides/transfer_learning/.*
