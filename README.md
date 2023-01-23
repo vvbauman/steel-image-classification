@@ -6,6 +6,8 @@ To use the data and scripts, I suggest cloning the repo to your computer or othe
 
 If you have no intention of using the data or scripts and just want an idea of the thought process used throughout this work, see the steel-defect-detection-progess.ppt file.
 
+**January 2023:** this repository has been archived
+
 ## File descriptions
 ### Folders w/images
 - train_colour_full_aug2 : folder. Includes training and validation images (7010 total) generated through image augmentation techniques of the 5 original images from the Severstal dataset. Sub-folders within this folder are set up for multi-class classification and to use keras' ImageDataGenerator.flow_from_directory()
